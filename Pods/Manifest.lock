@@ -1,0 +1,78 @@
+PODS:
+  - AVOSCloud (2.2.1)
+  - AVOSCloudUI (2.1.2):
+    - AVOSCloud
+  - BZGFormField (1.1.1)
+  - EAIntroView (2.2.1)
+  - Facebook-iOS-SDK (3.12.0)
+  - HexColors (2.2.1)
+  - HPGrowingTextView (1.1)
+  - iCarousel (1.7.6)
+  - JSAnimatedImagesView (1.0.0):
+    - MSWeakTimer (~> 1.0)
+  - MRProgress (0.3.0)
+  - MSWeakTimer (1.1.0)
+  - Parse-iOS-SDK (1.2.18):
+    - Facebook-iOS-SDK (~> 3.7)
+  - PBJVision (0.1.5)
+  - PopoverView (0.0.1)
+  - ReactiveCocoa (2.1.8):
+    - ReactiveCocoa/Core
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/Core (2.1.8):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.1.8)
+  - REMenu (1.8)
+  - RESideMenu (3.4)
+  - RPFloatingPlaceholders (0.2.4)
+  - SDWebImage (3.5.2):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.2)
+  - TMCache (1.2.0)
+  - TSMessages (0.9.4):
+    - HexColors
+
+DEPENDENCIES:
+  - AVOSCloud
+  - AVOSCloudUI
+  - BZGFormField
+  - EAIntroView
+  - HPGrowingTextView
+  - iCarousel
+  - JSAnimatedImagesView
+  - MRProgress (~> 0.3)
+  - Parse-iOS-SDK
+  - PBJVision
+  - PopoverView
+  - ReactiveCocoa
+  - REMenu (~> 1.8)
+  - RESideMenu (~> 3.4)
+  - RPFloatingPlaceholders
+  - SDWebImage
+  - TMCache (~> 1.2.0)
+  - TSMessages
+
+SPEC CHECKSUMS:
+  AVOSCloud: a93079ae83c5dd3616f97feffff189391771ead6
+  AVOSCloudUI: b0cae4f018d7d5ccc20544a893a7fab294beb7fa
+  BZGFormField: 33de12659f977d04da345940ba737d3174702cbe
+  EAIntroView: 7bc9e6b0738999343faf8e4a8b092b2b1218332b
+  Facebook-iOS-SDK: c09f7d80db5c48170ff834bc03ebe774c49d1f5b
+  HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
+  HPGrowingTextView: 4318f557b33c19def1c53ec275d6e2a2d6589cd0
+  iCarousel: e23a26d7ba722215a42144e80adb0dcb59bebc41
+  JSAnimatedImagesView: dd5c59494832864434aa9e4312e8d46e2b6012d9
+  MRProgress: 4f086e91313001ad4a622f1ea0d19bb8aa958f6a
+  MSWeakTimer: 2cd8d15b58e634517e83a7e433782faa8214a27f
+  Parse-iOS-SDK: 48bfd538a107b6e1f29eebe59fa80c0f0b844dd1
+  PBJVision: ffa0a3199e719f5a124e7ca4eb2503c19886232e
+  PopoverView: 571c17ebd5f0c20570e1f12ca1800bd56e1b6dc3
+  ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
+  REMenu: 40bb965c968b298c3f36d36067a15dd3f2c52473
+  RESideMenu: d8d6330052e0348718826045b912a1c71748357d
+  RPFloatingPlaceholders: a610f982723cc51daeb1acf14d00ed73066d3d2b
+  SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
+  TMCache: 4b05e1b124d9f7e8d449640e059cff4cda17ed27
+  TSMessages: 5ab92604b02e49a755d2cc2baf114d2248a90977
+
+COCOAPODS: 0.29.0

@@ -7,15 +7,34 @@
 //
 
 #import "AppDelegate.h"
+#import <ShareSDK/ShareSDK.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    //PARSE
+    [Parse setApplicationId:@"aY8FyKOqk1znZDbKxdIaLFFl2ogfWcq1N83moHfw"
+                  clientKey:@"DGGGNwALBwDQalI5bZVnQ9WoCK0gxiySD6jby2lf"];
+    /*
+    //AVOS
+    [AVOSCloud setApplicationId:@"adr3zj0mxo84u0cgauw4yuqa3ef3ybh43826kizadrtlkemk"
+    clientKey:@"3ilb0b1uuo7wp8rh5qy0o3ihxp0sg5rpn1rgmbln0c1p0me6"];
+    */
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+     
+    
+    [ShareSDK registerApp:@"1239cf1f2cb2" useAppTrusteeship:YES];
+    [ShareSDK importQQClass:[QQApiInterface class]
+            tencentOAuthCls:[TencentOAuth class]];
+    //Custom
+    [[UISegmentedControl appearance] setTintColor:[UIColor darkGrayColor]];
+    //[[MOManager sharedManager] getUnreadMessageCount];
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeSound];
+    
+
     return YES;
 }
 
@@ -39,11 +58,54 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //[[MOManager sharedManager] getUnreadMessageCount];
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation.badge != 0) {
+        currentInstallation.badge = 0;
+        [currentInstallation saveEventually];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
+}
+
+#pragma mark - push notifications
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    
+    if ([PFUser currentUser]) {
+        [currentInstallation setObject:[PFUser currentUser] forKey:@"owner"];
+    }
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    //[[MOManager sharedManager] getUnreadMessageCount];
+    
 }
 
 @end
