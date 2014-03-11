@@ -474,7 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				BD6A9A21189935ED00E1C12D /* Views */,
-				BD81E646188BA707008CF814 /* assets */,
+				BD81E646188BA707008CF814 /* Assets */,
 				BD23E26C1882E5D600FBEC83 /* Manager */,
 				BD23E2641882CEFA00FBEC83 /* Controllers */,
 				BD23E2411882CA6D00FBEC83 /* AppDelegate.h */,
@@ -807,7 +807,7 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		BD81E646188BA707008CF814 /* assets */ = {
+		BD81E646188BA707008CF814 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				BD141E6518B0A3E9004A0395 /* nib */,
@@ -816,7 +816,7 @@
 				BD308FBF18A0894C00C8D3B4 /* MessageEntryBackground@2x.png */,
 				BD308FC318A08CC300C8D3B4 /* MessageEntryInputField@2x.png */,
 			);
-			name = assets;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		BD91635F189414BC00EE4CC9 /* PBJVision */ = {
